@@ -1,6 +1,10 @@
 library(shiny)
 library(ggplot2)
 library(dplyr)
+library(rsconnect)
+
+#Link to the cocktail app
+rsconnect::deployApp('C:\\Users\\slee82\\OneDrive - University of Nebraska-Lincoln\\Documents\\Stat850\\11-interactive-graphics-sunhyoung-lee')
 
 #read the cocktail data
 cocktails <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-26/cocktails.csv')
@@ -38,8 +42,6 @@ server = function(input, output) {
       labs(x = "Ingredient ", title = "Cocktails Ingredients")
   })
 }
-
-
 
 
 shinyApp(ui = ui, server = server)
